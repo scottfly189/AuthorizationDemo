@@ -11,6 +11,16 @@ builder.Services.AddScoped<TokenService>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                 .AllowAnyHeader()
+                 .AllowAnyMethod();
+        });
+});
 //here is support the authorization in swagger.
 builder.Services.AddSwaggerGen(c =>
 {
@@ -69,9 +79,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseCors("AllowAll");
 //notice:must set this option.
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
