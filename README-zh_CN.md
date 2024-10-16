@@ -1,4 +1,4 @@
-jwt鉴权的使用
+jwt鉴权的使用 ([English](README.md)）
 ========
 
 一、jwt的使用思路：
@@ -35,8 +35,6 @@ jwt鉴权的使用
                 await Task.CompletedTask;
                 return Ok(new AuthResponse { Token = token, UserId = demoUser.Id.ToString(), UserName = demoUser.UserName });
             }
-
-
             public string CreateToken(User user)
             {
                 JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
@@ -79,10 +77,10 @@ jwt鉴权的使用
                 ClockSkew = TimeSpan.Zero
             };
         });
-
+   
     app.UseAuthorization();
 
-1. 如果需要Swagger支持鉴权，则做下面的swagger配置
+3. 如果需要Swagger支持鉴权，则做下面的swagger配置
     builder.Services.AddSwaggerGen(c =>
     {
    
@@ -115,6 +113,6 @@ jwt鉴权的使用
    
     });
 
-1. 使用
+4. 使用
 * 在控制器或者action中加入[Authorize]或者 [AllowAnonymous](%E5%A6%82%E6%9E%9C%E4%B8%8D%E9%9C%80%E8%A6%81%E9%89%B4%E6%9D%83);
 * 在Controller - action中或者HttpContext中使用this.User可以取到jwt中token中的内容;
