@@ -9,6 +9,14 @@ I. JWT Usage Strategy:
 * The frontend places the JWT in the request header as agreed and sends requests to the backend server;
 * After receiving the request, [ASP.NET](http://ASP.NET) Core parses the request and automatically authenticates through configured services and middleware;
 
+### Directory description:
+
+1. server: an Asp.net core web api backend, which mainly provides authentication services;
+
+2. web: a vue3 frontend, which sends requests to the backend through axios and displays the results;
+
+3. 
+
 ## II. A Simple Usage Example:
 
 * Prerequisites
