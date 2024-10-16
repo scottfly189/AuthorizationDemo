@@ -20,16 +20,6 @@ bin-release/
 # folders
 dist/
 node_modules/
-/Web/package-lock.json
-/Web/public/config.js
-/Web/stats.html
-/Web/npminstall-debug.log
 .vs
 .idea
 .DS_Store
-/Admin.NET/.vs
-/Admin.NET.App/unpackage
-/App/unpackage
-/nginx
-obj[obj]
-bin[bin]
