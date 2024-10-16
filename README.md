@@ -15,8 +15,6 @@ I. JWT Usage Strategy:
 
 2. web: a vue3 frontend, which sends requests to the backend through axios and displays the results;
 
-3. 
-
 ## II. A Simple Usage Example:
 
 * Prerequisites
